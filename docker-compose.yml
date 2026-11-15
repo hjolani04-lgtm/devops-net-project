@@ -13,9 +13,10 @@ services:
 
   backend-api:
     build: ./app
-    container_name: backend-api
     env_file:
       - .env
+    deploy:
+      replicas: 3
     depends_on:
       - redis-db
     networks:
